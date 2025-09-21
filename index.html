@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>easyCalc</title>
+    <title>Free Monthly Loan Calculator - Calculate Home, Car & Personal Loan Payments</title>
+    <meta name="description" content="Calculate your monthly loan payments, total interest, and full amortization schedule for home loans, car loans, and personal loans. Simple, fast, and free.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
-        /* CSS Variables for Theming .*/
+        /* CSS Variables for Theming */
         :root {
             /* Default Theme */
             --primary-bg-color: #4f46e5; /* indigo-600 */
@@ -283,6 +284,29 @@
 </head>
 <body class="theme-warm">
 
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "Free Monthly Loan Calculator",
+              "description": "Calculate your monthly loan payments, total interest, and full amortization schedule for home loans, car loans, and personal loans. Simple, fast, and free.",
+              "url": "https://easycalc.com/loan-calculator",
+              "keywords": "loan calculator, monthly payment calculator, amortization schedule, home loan, car loan, personal loan, mortgage calculator"
+            },
+            {
+              "@type": "Calculator",
+              "name": "Loan Payment Calculator",
+              "description": "A tool to calculate loan payments and create an amortization schedule.",
+              "url": "https://easycalc.com/loan-calculator",
+              "toolType": "Financial"
+            }
+          ]
+        }
+    </script>
+
     <!-- Header -->
     <header class="shadow-lg p-4" style="background-color: var(--primary-bg-color); color: var(--primary-text-color);">
         <div class="container mx-auto flex justify-between items-center">
@@ -291,6 +315,14 @@
     </header>
 
     <main>
+        <!-- SEO-optimized content block -->
+        <section class="max-w-4xl text-center mb-8">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4" style="color: var(--text-color);">Free & Simple Loan Calculator</h2>
+            <p class="text-lg md:text-xl text-center mb-6" style="color: var(--sub-text-color);">
+                Use our <b>free monthly loan calculator</b> to quickly determine your loan payments, total interest, and the full amortization schedule. Whether you're planning for a new <b>home loan</b>, a <b>car loan</b>, or a <b>personal loan</b>, our tool helps you make informed financial decisions with ease. Simply adjust the sliders below to see your results instantly.
+            </p>
+        </section>
+
         <div class="main-grid">
             <!-- Left Panel: Calculator Inputs -->
             <div class="calculator-card">
@@ -586,7 +618,7 @@
         function getCurrencySymbol() {
             const symbols = {
                 'USD': '$', 'EUR': '€', 'JPY': '¥', 'GBP': '£', 'AUD': '$', 'CAD': '$',
-                'CHF': 'Fr', 'CNY': '¥', 'SEK': 'kr', 'NZD': '$', 'INR': '₹', 'BRL': 'R$',
+                'CHF': 'Fr', 'CNY': '¥', '¥': '¥', 'SEK': 'kr', 'NZD': '$', 'INR': '₹', 'BRL': 'R$',
                 'RUB': '₽', 'ZAR': 'R'
             };
             return symbols[currentCurrency] || currentCurrency;
@@ -685,8 +717,8 @@
                     plugins: {
                         legend: {
                             position: 'bottom',
+                            align: 'center',
                             labels: {
-                                boxWidth: 12,
                                 font: { family: 'Inter', size: 14 }
                             }
                         },
